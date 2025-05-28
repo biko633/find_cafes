@@ -1,0 +1,63 @@
+{
+  "MetaData": {
+    "title": "Find Cafes",
+    "description": "Explore the best cafes in your city with just a few clicks and find your perfect cafe spot now"
+  },
+  "Header": {
+    "title": "header"
+  },
+  "Footer": {
+    "content": "made with ❤️ by ahmed yeslam"
+  },
+  "Hero": {
+    "title": "Find Your Perfect Cafe Spot",
+    "content": "Explore the best cafes in your city with just a few clicks",
+    "button": "Discover Your Cafe Spot"
+  },
+  "Countries": {
+    "title": "Choose your country"
+  },
+  "Cities": {
+    "title": "Choose your city"
+  },
+  "Loading": {
+    "title": "Loading",
+    "content": "Please wait a moment."
+  },
+  "map": {
+    "price": {
+      "title": "price range"
+    },
+    "button": {
+      "text": "Map Link"
+    },
+    "icons": {
+      "toilet": {
+        "title": "Toilets"
+      },
+      "wifi": {
+        "title": "Wifi"
+      },
+      "wheelchair_accessible": {
+        "title": "Wheelchair Accessible"
+      },
+      "accepts_reservations": {
+        "title": "Reservations"
+      },
+      "family_friendly": {
+        "title": "Family Friendly"
+      },
+      "price": {
+        "title": "Prices",
+        "range_low": "Low",
+        "range_medium": "Medium",
+        "range_high": "High"
+      }
+    }
+  },
+  "NotFound": {
+    "title": "Page not found 404",
+    "content": "The page you are looking for does not exist.",
+    "button": "Back to Home"
+  }
+}

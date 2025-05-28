@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-tajawal), sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* leaflet css */
+
+.leaflet-container {
+  height: 100%;
+  /* width: 100%; */
+}
+
+.leaflet-popup-content {
+  width: 250px;
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: rgb(214, 192, 179) !important;
+}
+
+/* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
+
+/* media queries */
+
+/* @media (max-width: 1300px) {
+  .filter-icons {
+    display: block;
+  }
+} */
+
+@media (max-width: 1000px) {
+  .choosebody-list-items {
+    width: 40%;
+    /* justify-content: center; */
+    justify-content: flex-start;
+  }
+  /* .choosebody-list-items-container {
+    justify-content: flex-start;
+  } */
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    height: auto; /* Allow header height to adjust for content */
+  }
+
+  .language-buttons {
+    position: static;
+    margin-top: 10px; /* Spacing between the logo and buttons */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 380px;
+    margin-top: 150px;
+    margin-left: 50px;
+  }
+
+  .hero-title {
+    font-size: 30px;
+  }
+
+  .hero-content {
+    font-size: 25px;
+  }
+
+  .hero-button {
+    font-size: 16px;
+  }
+
+  .choosebody-title-body {
+    flex-direction: column;
+  }
+
+  .choosebody-title-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .choosebody-list-title {
+    flex-direction: column;
+    font-size: 2.2rem;
+  }
+
+  .choosebody-list-items-container {
+    flex-direction: column;
+  }
+
+  .choosebody-list-items {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .choosebody-list-items-country {
+    width: 100%;
+  }
+}
+
+/* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
