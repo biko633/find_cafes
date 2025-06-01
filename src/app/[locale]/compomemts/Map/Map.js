@@ -30,6 +30,8 @@ const Map = (props) => {
   const [showicon, set_showicon] = useState(true);
   const [price_filter, set_price_filter] = useState("");
 
+  // console.log(props.city_list);
+
   const shops_icon = new icon({
     iconUrl: "/imgs/shop-icon.svg",
     iconSize: [45, 45],
@@ -245,6 +247,7 @@ const Map = (props) => {
                   src={"/imgs/shop-image.jpg"}
                   alt="shop image"
                   className="rounded"
+                  style={{ height: "250px", width: "250px" }}
                 />
                 <h1 className="text-primary1 font-bold">
                   {lang === "en" ? city.name_en : city.name_ar}

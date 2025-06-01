@@ -23,6 +23,7 @@ const Header = () => {
             width={225}
             height={100}
             alt="logo"
+            style={{ width: "225px", height: "100px" }}
           />
         </Link>
       </div>

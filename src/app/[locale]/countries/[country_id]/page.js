@@ -1,20 +1,16 @@
 import React from "react";
 import Main from "../../compomemts/Main";
 import ChooseBody from "../../compomemts/ChooseBody";
-import { prisma } from "../../../../../utils/db";
+import { getCitiesWithCountry } from "../../API/GetCities";
 
 const Cities = async ({ params }) => {
   const { country_id } = await params;
 
-  const _ = await prisma.countries.findUnique({
-    where: { country_code_2: country_id },
-  });
+  const _ = await getCitiesWithCountry(country_id);
 
   if (!_) {
     throw new Error("country not found");
   }
-
-  // throw new Error("this path is not supported");
   return (
     <Main>
       <ChooseBody

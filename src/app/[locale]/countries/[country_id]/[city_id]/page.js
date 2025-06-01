@@ -1,15 +1,14 @@
 import React from "react";
-import { prisma } from "../../../../../../utils/db";
 import Main from "../../../compomemts/Main";
 import Map from "../../../compomemts/Map";
+import { getCitiesWithCountryAndCityId } from "../../../API/GetCities";
+import { getCafesWithCityId } from "../../../API/GetCafes";
 
 const city = async ({ params }) => {
   const { country_id, city_id } = await params;
   // console.log(country_id, city_id);
 
-  const found = await prisma.cities.findUnique({
-    where: { country_code_2: country_id, city_code_2: city_id },
-  });
+  const found = await getCitiesWithCountryAndCityId(country_id, city_id);
 
   // console.log(found);
 
@@ -17,11 +16,9 @@ const city = async ({ params }) => {
     throw new Error("city not found");
   }
 
-  const city_list = await prisma.cafes.findMany({
-    where: {
-      city_code_2: city_id,
-    },
-  });
+  const city_list = await getCafesWithCityId(city_id);
+
+  // console.log(city_list);
 
   return (
     <Main>

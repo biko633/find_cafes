@@ -19,7 +19,7 @@ function convertPriceRange(p_range) {
       .map((number) => Number(number))
       .reduce((result, current_num) => result + current_num) / 2;
 
-  console.log(price);
+  // console.log(price);
   return price;
 }
 
@@ -40,8 +40,8 @@ function checkPriceRange(p_range, filter) {
 
 // this function filters the database city_list based on the items_to_filter
 const FilterFunc = (items_to_filter, city_list, price_range) => {
-  console.log(price_range);
-  console.log("filter function");
+  // console.log(price_range);
+  // console.log("filter function");
   const valid_items = [
     "toilets",
     "wifi",
@@ -49,11 +49,11 @@ const FilterFunc = (items_to_filter, city_list, price_range) => {
     "accepts_reservations",
     "family_friendly",
   ];
-  console.log(items_to_filter);
+  // console.log(items_to_filter);
 
   // if there are no items to filter or somehow there is an item that is not valid in the items_to_filter
   if (items_to_filter == [] || checkItem(items_to_filter, valid_items)) {
-    console.log("no items to filter");
+    // console.log("no items to filter");
     return city_list;
   }
 
@@ -68,7 +68,7 @@ const FilterFunc = (items_to_filter, city_list, price_range) => {
   for (let i = 0; i < items_to_filter.length; i++) {
     city_list = city_list.filter((city) => {
       if (valid_items.includes(items_to_filter[i])) {
-        console.log("valid item");
+        // console.log("valid item");
         return city[items_to_filter[i]] === 1;
       } else {
         console.log(`skipping this item -> ${items_to_filter[i]} <- not valid`);

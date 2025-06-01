@@ -46,3 +46,4 @@ database/*
 .prisma/
 !prisma/schema.prisma
 !prisma/migrations/
+prisma/Find_Cafes.db

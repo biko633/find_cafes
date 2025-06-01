@@ -1,25 +1,18 @@
 import React from "react";
-// import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
-import { prisma } from "../../../../utils/db";
 import { cookies } from "next/headers";
 import { Link } from "i18n/routing";
-
-// THIS COMPONENT IS USED TO LIST COUNTRIES AND CITIES
+import { getCountries } from "../API/GetCountries";
+import { getCitiesWithCountry } from "../API/GetCities";
 
 // this is the body of the choose page countries and cities
 const ChooseBody = async (props) => {
   const type = props.type;
-  const country_list = await prisma.countries.findMany();
+  const country_list = await getCountries();
   const cookieStore = await cookies();
   const lang = cookieStore.get("NEXT_LOCALE").value;
 
-  // console.log(lang);
-
-  // <img src={`https://flagcdn.com/${code}.svg`} width="30" alt={name} />
-
-  // console.log(data);
   if (type === "countries") {
     const t = await getTranslations("Countries");
     const path = props.path;
@@ -32,6 +25,7 @@ const ChooseBody = async (props) => {
             width={100}
             height={100}
             alt={lang === "en" ? "countries icon" : "ايقونة بلدان"}
+            style={{ width: "100px", height: "100px" }}
           />
           <h1 className="text-primary1">{t("title")}</h1>
         </div>
@@ -46,9 +40,10 @@ const ChooseBody = async (props) => {
                 <Image
                   className="rounded-md"
                   src={`https://flagcdn.com/${country.country_code_2.toLocaleLowerCase()}.svg`}
-                  width={80}
+                  width={120}
                   height={80}
                   alt={lang === "en" ? country.name : country.name_ar}
+                  style={{ width: "120px", height: "80px" }}
                 />
                 <p className="text-primary4 text-2xl">
                   {lang === "en" ? country.name : country.name_ar}
@@ -60,12 +55,7 @@ const ChooseBody = async (props) => {
       </div>
     );
   } else if (type === "cities") {
-    const city_list = await prisma.cities.findMany({
-      where: {
-        country_code_2: props.country_id,
-      },
-    });
-    // console.log(city_list);
+    const city_list = await getCitiesWithCountry(props.country_id);
     const t = await getTranslations("Cities");
     const path = props.path;
     return (
@@ -77,6 +67,7 @@ const ChooseBody = async (props) => {
             width={100}
             height={100}
             alt={lang === "en" ? "cities icon" : "أيقونة المدن"}
+            style={{ width: "100px", height: "100px" }}
           />
           <h1 className="text-primary1">{t("title")}</h1>
         </div>
@@ -94,6 +85,7 @@ const ChooseBody = async (props) => {
                   width={80}
                   height={80}
                   alt={lang === "en" ? city.name : city.name_ar}
+                  style={{ width: "80px", height: "80px" }}
                 />
                 <p className="text-primary4 text-2xl">
                   {lang === "en" ? city.name : city.name_ar}

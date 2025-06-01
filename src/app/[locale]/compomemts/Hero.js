@@ -11,6 +11,7 @@ import { Link } from "i18n/routing";
 
 const Hero = () => {
   const t = useTranslations("Hero");
+
   return (
     <div className="w-full h-screen">
       <img
