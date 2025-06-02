@@ -1,6 +1,4 @@
 // "use client";
-
-import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 /**
@@ -12,8 +10,6 @@ import Link from "next/link";
  * @returns A JSX element representing the not found page.
  */
 const GlobalNotFound = () => {
-  const t = useTranslations("NotFound");
-
   return (
     <html lang="en" style={{ backgroundColor: "#ab886d", height: "100%" }}>
       <body>
@@ -26,8 +22,11 @@ const GlobalNotFound = () => {
             fontWeight: "bold",
           }}
         >
-          <h2>{t("title")}</h2>
-          <p>{t("content")}</p>
+          <h2>Page not found 404 / 404 الصفحة غير موجودة"</h2>
+          <p>
+            The page you are looking for does not exist. / .الصفحة التي تبحث
+            عنها غير موجودة
+          </p>
           <Link
             href="/"
             style={{
@@ -45,7 +44,7 @@ const GlobalNotFound = () => {
               transition: "background-color 0.3s ease-in-out",
             }}
           >
-            {t("button")}
+            Back to Home / ارجع إلى الصفحة الرئيسية
           </Link>
         </div>
       </body>
